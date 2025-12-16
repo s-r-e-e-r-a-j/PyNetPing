@@ -1,3 +1,6 @@
+# Developer: Sreeraj
+# GitHub: https://github.com/s-r-e-e-r-a-j
+
 import socket
 import struct
 from typing import Optional

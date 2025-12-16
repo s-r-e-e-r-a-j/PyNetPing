@@ -1,3 +1,6 @@
+# Developer: Sreeraj
+# GitHub: https://github.com/s-r-e-e-r-a-j
+
 from .icmp4 import icmp4_ping
 from .icmp6 import icmp6_ping
 from .tcp import tcp_ping

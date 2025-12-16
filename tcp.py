@@ -1,3 +1,6 @@
+# Developer: Sreeraj
+# GitHub: https://github.com/s-r-e-e-r-a-j
+
 import socket
 from typing import Optional
 from .utils import now, is_ipv6

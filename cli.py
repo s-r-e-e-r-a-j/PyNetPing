@@ -1,3 +1,6 @@
+# Developer: Sreeraj
+# GitHub: https://github.com/s-r-e-e-r-a-j
+
 import argparse
 from .ping import ping
 from .output import to_json, to_csv
