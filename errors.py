@@ -1,0 +1,2 @@
+class PingError(Exception):
+    pass
