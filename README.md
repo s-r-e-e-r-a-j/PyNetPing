@@ -306,12 +306,18 @@ Explanation:
 
 - `8.8.8.8` → Target host
 
-3. **print output in JSON format:**
+3. **Ping with DNS Fallback**
+```bash
+python3 -m PyNetPing.cli 8.8.8.8 --dns
+```
+- `--dns` enables DNS ping if ICMP, TCP, and HTTP fail.
+
+4. **print output in JSON format:**
 ```bash
 python3 -m PyNetPing.cli 8.8.8.8 --json
 ```
 
-4. **Save output to CSV file:**
+5. **Save output to CSV file:**
 ```bash
 python3 -m PyNetPing.cli 8.8.8.8 --csv output.csv
 ```
