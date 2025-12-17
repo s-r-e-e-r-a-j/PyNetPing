@@ -208,7 +208,7 @@ print(result)
 ```
 - TCP fallback will try port 443 instead of 80
 
-### Save Output as JSON (Library)
+### Print Output as JSON (Library)
 
 ```python
 from PyNetPing import ping
