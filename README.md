@@ -275,15 +275,16 @@ python3 -m PyNetPing.cli 8.8.8.8
 
 ### Options:
 
-| Option           | Type  | Default | Description                                      |
-|------------------|-------|---------|--------------------------------------------------|
-| host             | str   | —       | Target host to ping (required)                   |
-| -c, --count      | int   | 4       | Number of ping requests to send                  |
-| -t, --timeout    | float | 1.0     | Timeout in seconds for each request              |
-| -r, --rate       | float | 10.0    | Maximum requests per second                      |
-| --dns            | flag  | False   | Use DNS ping if other protocols fail             |
-| --json           | flag  | False   | Output results in JSON format                    |
-| --csv            | str   | —       | Save output to the specified CSV file            |
+| Option           | Type  | Default | Description                              |
+|------------------|-------|---------|------------------------------------------|
+| host             | str   | —       | Target host to ping (required)           |
+| -c, --count      | int   | 4       | Number of ping requests to send          |
+| -t, --timeout    | float | 1.0     | Timeout in seconds for each request      |
+| -p, --port       | int   | 80      | Fallback TCP ping port if ICMP fails     |
+| -r, --rate       | float | 10.0    | Maximum requests per second              |
+| --dns            | flag  | False   | Use DNS ping if other protocols fail     |
+| --json           | flag  | False   | Output results in JSON format            |
+| --csv            | str   | —       | Save output to the specified CSV file    |
 
 ### Examples:
 
