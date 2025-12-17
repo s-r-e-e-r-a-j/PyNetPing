@@ -13,6 +13,7 @@ def main() -> None:
     parser.add_argument("host", help="Target host to ping")
     parser.add_argument("-c", "--count", type=int, default=4, help="Number of ping requests")
     parser.add_argument("-t", "--timeout", type=float, default=1.0, help="Timeout in seconds")
+    parser.add_argument("-p", "--port", type=int, default=80, help="Fallback TCP ping port if ICMP fails (default: 80)")
     parser.add_argument("-r", "--rate", type=float, default=10.0, help="Requests per second")
     parser.add_argument("--dns", action="store_true", help="Use DNS ping if other protocols fail")
     parser.add_argument("--json", action="store_true", help="Output in JSON format")
@@ -27,6 +28,7 @@ def main() -> None:
         host=args.host,
         count=args.count,
         timeout=args.timeout,
+        port=args.port,
         rate=args.rate,
         use_dns=args.dns
     )
