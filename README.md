@@ -136,7 +136,7 @@ ping(
 
 ## Examples
 
-1. **Basic Ping Usage (Library)**
+### Basic Ping Usage (Library)
 
 The simplest way to check if a host is reachable.
 
@@ -151,7 +151,7 @@ print(result)
 - Uses ICMP if available
 - Falls back to TCP → HTTP if needed
 
-2. **Advanced Usage (Library)**
+### Advanced Usage (Library)
 
 Custom Ping Count, Timeout, and Rate
 
@@ -176,7 +176,7 @@ print(result)
 
 - Limits sending speed to 5 requests per second
 
-3. **Enable DNS Fallback (Library) (Optional)**
+### Enable DNS Fallback (Library) (Optional)
 
 DNS ping is disabled by default and only used if explicitly enabled.
 
@@ -190,7 +190,7 @@ result = ping(
 ```
 - DNS is attempted only if ICMP, TCP, and HTTP fail
 
-4. **Specify TCP Port for Fallback (Library)**
+### Specify TCP Port for Fallback (Library)
 
 TCP fallback uses port 80 by default. You can override it:
 
@@ -204,7 +204,7 @@ result = ping(
 ```
 - TCP fallback will try port 443 instead of 80
 
-5. **Save Output as JSON (Library)**
+### Save Output as JSON (Library)
 
 ```python
 from PyNetPing import ping
@@ -216,7 +216,7 @@ json_data = to_json([result])
 print(json_data)
 ```
 
-6. **Save Output as CSV (Library)**
+### Save Output as CSV (Library)
 
 ```python
 from PyNetPing import ping
@@ -226,7 +226,7 @@ result = ping("8.8.8.8")
 to_csv([result], "results.csv")
 ```
 
-7. **Ping Multiple Hosts (Async) (Library)**
+### Ping Multiple Hosts (Async) (Library)
 
 ```python
 import asyncio
