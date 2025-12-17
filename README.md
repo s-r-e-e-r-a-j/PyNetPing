@@ -187,6 +187,8 @@ result = ping(
     host="8.8.8.8",
     use_dns=True
 )
+
+print(result)
 ```
 - DNS is attempted only if ICMP, TCP, and HTTP fail
 
@@ -201,6 +203,8 @@ result = ping(
     host="8.8.8.8",
     port=443
 )
+
+print(result)
 ```
 - TCP fallback will try port 443 instead of 80
 
