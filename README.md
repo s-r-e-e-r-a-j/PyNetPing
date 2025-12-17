@@ -243,6 +243,7 @@ results = asyncio.run(
         hosts,
         count=3, # number of ping requests per host (default 4)
         timeout=1.5,  # max wait per ping in seconds (default 1.0)
+        port=443, # Fallback TCP ping port if ICMP fails (default: 80)
         limit=50  # max number of concurrent pings (default 100)
     )
 )
