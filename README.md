@@ -102,3 +102,31 @@ project/
 │   └── ...
 └── test.py
 ```
+
+### The `ping()` Function
+
+PyNetPing exposes a single main function for reachability testing: `ping()`.
+
+It automatically selects the best available method and falls back if one method fails.
+
+**Function Signature:**
+```python
+ping(
+    host: str, # required
+    count: int = 4,
+    timeout: float = 1.0,
+    port: int = 80,
+    rate: float = 10.0,
+    use_dns: bool = False
+) -> PingResult
+```
+**`ping()` Arguments**
+
+| Argument | Required  | Default | Description                                    |
+|-----------|----------|---------|------------------------------------------------|
+| `host`    | **Yes**  | —       | Target hostname or IP address (IPv4 or IPv6)   |
+| `count`   | No       | `4`     | Number of ping attempts                        |
+| `timeout` | No       | `1.0`   | Timeout per request in seconds                 |
+| `port`    | No       | `80`    | TCP port used **only for TCP fallback**        |
+| `rate`    | No       | `10.0`  | Requests per second (rate limiting)            |
+| `use_dns` | No       | `False` | Enable DNS ping fallback if other methods fail |
