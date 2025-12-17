@@ -109,7 +109,7 @@ PyNetPing exposes a single main function for reachability testing: `ping()`.
 
 It automatically selects the best available method and falls back if one method fails.
 
-**Function Signature:**
+#### Function Signature:
 ```python
 ping(
     host: str, # required
@@ -121,7 +121,7 @@ ping(
 ) -> PingResult
 ```
 
- **ping() Arguments:**
+#### ping() Arguments:
 
 | Argument | Required  | Default | Description                                    |
 |-----------|----------|---------|------------------------------------------------|
