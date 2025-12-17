@@ -120,7 +120,8 @@ ping(
     use_dns: bool = False
 ) -> PingResult
 ```
-**`ping()` Arguments**
+
+ **ping() Arguments:**
 
 | Argument | Required  | Default | Description                                    |
 |-----------|----------|---------|------------------------------------------------|
