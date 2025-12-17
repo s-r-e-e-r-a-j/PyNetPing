@@ -321,6 +321,17 @@ python3 -m PyNetPing.cli 8.8.8.8 --json
 ```bash
 python3 -m PyNetPing.cli 8.8.8.8 --csv output.csv
 ```
+6. **Ping with custom TCP fallback port**
+```bash
+python3 -m PyNetPing.cli 8.8.8.8 -p 443
+```
+- Attempts ICMP ping first.
+
+- If ICMP fails, falls back to TCP ping.
+
+- TCP ping uses the specified port (`-p` / `--port`).
+
+- Default TCP fallback port is **80** if not specified.
 
 ## License
 This project is licensed under the MIT License
