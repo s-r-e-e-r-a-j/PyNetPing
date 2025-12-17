@@ -42,3 +42,64 @@
 
 
 - **CLI Tool:** Use PyNetPing directly from the command line with all the above features.
+
+---
+
+## Requirements
+
+- **Python 3.10 or higher**
+
+- Privileges:
+
+  - **ICMP requires elevated privileges:**
+
+    - Linux / macOS: run as root
+
+    - Windows: run as Administrator
+
+
+ - If ICMP is unavailable, PyNetPing automatically falls back to TCP, HTTP, or DNS
+
+---
+
+## IPv6 Notes
+
+- All ping methods support IPv6
+
+- IPv6 availability depends on:
+
+ - Network configuration
+
+ - OS support
+
+- If IPv6 is unreachable, fallback mechanisms apply automatically
+
+--- 
+
+## Installation
+
+**Clone the repository:**
+```bash
+git clone https://github.com/s-r-e-e-r-a-j/PyNetPing.git
+```
+
+This will create a folder named PyNetPing.
+
+---
+
+## Using PyNetPing as a Library
+
+**To use PyNetPing as a library:**
+
+ - The `PyNetPing` folder must be in the same directory as your Python script
+
+**Example Directory Structure**
+
+```md
+project/
+├── PyNetPing/
+│   ├── ping.py
+│   ├── cli.py
+│   └── ...
+└── test.py
+```
