@@ -17,6 +17,6 @@ async def ping_hosts(
 
     async def run(host: str) -> PingResult:
         async with sem:
-            return await asyncio.to_thread(ping, host, count, timeout)
+            return await asyncio.to_thread(ping, host, count, timeout, use_dns=True)
 
     return await asyncio.gather(*(run(h) for h in hosts))
