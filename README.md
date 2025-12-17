@@ -131,3 +131,118 @@ ping(
 | `port`    | No       | `80`    | TCP port used **only for TCP fallback**        |
 | `rate`    | No       | `10.0`  | Requests per second (rate limiting)            |
 | `use_dns` | No       | `False` | Enable DNS ping fallback if other methods fail |
+
+--- 
+
+## Examples
+
+1. **Basic Ping Usage (Library)**
+
+The simplest way to check if a host is reachable.
+
+```python
+from PyNetPing import ping
+
+result = ping("8.8.8.8")
+print(result)
+```
+
+- Automatically selects IPv4 or IPv6
+- Uses ICMP if available
+- Falls back to TCP → HTTP if needed
+
+2. **Advanced Usage (Library)**
+
+Custom Ping Count, Timeout, and Rate
+
+```python
+from PyNetPing import ping
+
+result = ping(
+    host="8.8.8.8",
+    count=10,
+    timeout=2.0,
+    rate=5.0
+)
+
+print(result)
+```
+
+**Explanation:**
+
+- Sends 10 ping requests
+
+- Waits up to 2 seconds per request
+
+- Limits sending speed to 5 requests per second
+
+3. **Enable DNS Fallback (Library) (Optional)**
+
+DNS ping is disabled by default and only used if explicitly enabled.
+
+```python
+from PyNetPing import ping
+
+result = ping(
+    host="8.8.8.8",
+    use_dns=True
+)
+```
+- DNS is attempted only if ICMP, TCP, and HTTP fail
+
+4. **Specify TCP Port for Fallback (Library)**
+
+TCP fallback uses port 80 by default. You can override it:
+
+```python
+from PyNetPing import ping
+
+result = ping(
+    host="8.8.8.8",
+    port=443
+)
+```
+- TCP fallback will try port 443 instead of 80
+
+5. **Save Output as JSON (Library)**
+
+```python
+from PyNetPing import ping
+from PyNetPing import to_json
+
+result = ping("8.8.8.8")
+json_data = to_json([result])
+
+print(json_data)
+```
+
+6. **Save Output as CSV (Library)**
+
+```python
+from PyNetPing import ping
+from PyNetPing import to_csv
+
+result = ping("8.8.8.8")
+to_csv([result], "results.csv")
+```
+
+7. **Ping Multiple Hosts (Async) (Library)**
+
+```python
+import asyncio
+from PyNetPing import ping_hosts
+
+hosts = ["8.8.8.8", "1.1.1.1", "google.com"]
+
+results = asyncio.run(
+    ping_hosts(
+        hosts,
+        count=3, # number of ping requests per host (default 4)
+        timeout=1.5,  # max wait per ping in seconds (default 1.0)
+        limit=50  # max number of concurrent pings (default 100)
+    )
+)
+
+for r in results:
+    print(r)
+```
