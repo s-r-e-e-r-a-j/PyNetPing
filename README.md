@@ -246,3 +246,70 @@ results = asyncio.run(
 for r in results:
     print(r)
 ```
+
+## Using PyNetPing as a CLI Tool
+
+PyNetPing also works as a command-line tool. The PyNetPing folder must be in the current working directory when running the CLI.
+
+CLI automatically selects the best protocol: ICMP → TCP → HTTP → DNS (if `--dns` is enabled).
+
+Run as root/admin to use ICMP ping fully. On Linux/macOS.in windows run as administrator:
+
+**Exit codes for automation:**
+
+| Exit Code | Meaning                      |
+|-----------|------------------------------|
+| 0         | Success (all pings received) |
+| 1         | Partial packet loss          |
+| 2         | Host unreachable             |
+
+### Basic Usage:
+```bash
+python3 -m PyNetPing.cli 8.8.8.8
+```
+
+### Options:
+
+| Option           | Type  | Default | Description                                      |
+|------------------|-------|---------|--------------------------------------------------|
+| host             | str   | —       | Target host to ping (required)                   |
+| -c, --count      | int   | 4       | Number of ping requests to send                  |
+| -t, --timeout    | float | 1.0     | Timeout in seconds for each request              |
+| -r, --rate       | float | 10.0    | Maximum requests per second                      |
+| --dns            | flag  | False   | Use DNS ping if other protocols fail             |
+| --json           | flag  | False   | Output results in JSON format                    |
+| --csv            | str   | —       | Save output to the specified CSV file            |
+
+### Examples:
+
+1. **Basic ping:**
+```bash
+python3 -m PyNetPing.cli 8.8.8.8
+```
+
+2. **Ping with 10 Requests, 2-Second Timeout, and Custom Rate**
+```bash
+python3 -m PyNetPing.cli 8.8.8.8 -c 10 -t 2 -r 5
+```
+Explanation:
+
+- `-c 10` → Send 10 ping requests
+
+- `-t 2` → Wait up to 2 seconds for each request
+
+- `-r 5` → Send 5 requests per second
+
+- `8.8.8.8` → Target host
+
+3. **print output in JSON format:**
+```bash
+python3 -m PyNetPing.cli 8.8.8.8 --json
+```
+
+4. **Save output to CSV file:**
+```bash
+python3 -m PyNetPing.cli 8.8.8.8 --csv output.csv
+```
+
+## License
+This project is licensed under the MIT License
