@@ -67,10 +67,9 @@
 - All ping methods support IPv6
 
 - IPv6 availability depends on:
+   - Network configuration
 
- - Network configuration
-
- - OS support
+   - OS support
 
 - If IPv6 is unreachable, fallback mechanisms apply automatically
 
