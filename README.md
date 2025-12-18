@@ -77,31 +77,18 @@
 
 ## Installation
 
-**Clone the repository:**
-```bash
-git clone https://github.com/s-r-e-e-r-a-j/PyNetPing.git
-```
+You can install PyNetPing using **pip** or **pip3**:
 
-This will create a folder named PyNetPing.
+```bash
+pip3 install pynetping
+# or
+pip install pynetping
+```
 
 ---
 
 ## Using PyNetPing as a Library
 
-**To use PyNetPing as a library:**
-
- - The `PyNetPing` folder must be in the same directory as your Python script
-
-**Example Directory Structure**
-
-```md
-project/
-├── PyNetPing/
-│   ├── ping.py
-│   ├── cli.py
-│   └── ...
-└── test.py
-```
 
 ### The `ping()` Function
 
@@ -254,7 +241,7 @@ for r in results:
 
 ## Using PyNetPing as a CLI Tool
 
-PyNetPing also works as a command-line tool. The PyNetPing folder must be in the current working directory when running the CLI.
+PyNetPing also works as a command-line tool.
 
 CLI automatically selects the best protocol: ICMP → TCP → HTTP → DNS (if `--dns` is enabled).
 
@@ -270,7 +257,7 @@ Run as root/admin to use ICMP ping fully. On Linux/macOS.in windows run as admin
 
 ### Basic Usage:
 ```bash
-python3 -m PyNetPing 8.8.8.8
+pynetping 8.8.8.8
 ```
 
 ### Options:
@@ -290,12 +277,12 @@ python3 -m PyNetPing 8.8.8.8
 
 1. **Basic ping:**
 ```bash
-python3 -m PyNetPing 8.8.8.8
+pynetping 8.8.8.8
 ```
 
 2. **Ping with 10 Requests, 2-Second Timeout, and Custom Rate**
 ```bash
-python3 -m PyNetPing 8.8.8.8 -c 10 -t 2 -r 5
+pynetping 8.8.8.8 -c 10 -t 2 -r 5
 ```
 Explanation:
 
@@ -309,22 +296,22 @@ Explanation:
 
 3. **Ping with DNS Fallback**
 ```bash
-python3 -m PyNetPing 8.8.8.8 --dns
+pynetping 8.8.8.8 --dns
 ```
 - `--dns` enables DNS ping if ICMP, TCP, and HTTP fail.
 
 4. **print output in JSON format:**
 ```bash
-python3 -m PyNetPing 8.8.8.8 --json
+pynetping 8.8.8.8 --json
 ```
 
 5. **Save output to CSV file:**
 ```bash
-python3 -m PyNetPing 8.8.8.8 --csv output.csv
+pynetping 8.8.8.8 --csv output.csv
 ```
 6. **Ping with custom TCP fallback port**
 ```bash
-python3 -m PyNetPing 8.8.8.8 -p 443
+pynetping 8.8.8.8 -p 443
 ```
 - Attempts ICMP ping first.
 
