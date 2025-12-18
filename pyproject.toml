@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pynetping"
+version = "1.0.0"
+description = "Python ping library and CLI tool with ICMP, TCP, HTTP, and DNS fallback"
+readme = "README.md"
+license = { file = "LICENSE.md" }   
+authors = [
+  { name = "Sreeraj S Kurup" }
+]
+requires-python = ">=3.10"
+keywords = ["ping", "network", "icmp", "tcp", "http", "dns", "cli"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "License :: OSI Approved :: MIT License",
+]
+
+[project.scripts]
+pynetping = "PyNetPing.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["PyNetPing*"]
