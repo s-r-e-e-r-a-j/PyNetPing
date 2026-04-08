@@ -3,7 +3,7 @@
 
 import json
 import csv
-from typing import Iterable
+from collections.abc import Iterable
 from dataclasses import asdict
 from .result import PingResult
 

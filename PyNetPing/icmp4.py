@@ -3,7 +3,6 @@
 
 import socket
 import struct
-from typing import Optional
 from .utils import now, packet_id
 
 def checksum(data: bytes) -> int:
@@ -18,7 +17,7 @@ def checksum(data: bytes) -> int:
     total += total >> 16
     return ~total & 0xFFFF
 
-def icmp4_ping(host: str, timeout: float, seq: int) -> Optional[float]:
+def icmp4_ping(host: str, timeout: float, seq: int) -> float | None:
     sock: socket.socket = socket.socket(
         socket.AF_INET,
         socket.SOCK_RAW,

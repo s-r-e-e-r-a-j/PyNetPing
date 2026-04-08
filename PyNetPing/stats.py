@@ -1,7 +1,7 @@
 # Developer: Sreeraj
 # GitHub: https://github.com/s-r-e-e-r-a-j
 
-from typing import Sequence
+from collections.abc import Sequence
 import statistics
 
 def loss(sent: int, received: int) -> float:

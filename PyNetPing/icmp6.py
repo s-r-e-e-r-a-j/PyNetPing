@@ -3,10 +3,9 @@
 
 import socket
 import struct
-from typing import Optional
 from .utils import now, packet_id
 
-def icmp6_ping(host: str, timeout: float, seq: int) -> Optional[float]:
+def icmp6_ping(host: str, timeout: float, seq: int) -> float | None:
     try:
         sock: socket.socket = socket.socket(socket.AF_INET6, socket.SOCK_RAW, socket.IPPROTO_ICMPV6)
     except Exception:

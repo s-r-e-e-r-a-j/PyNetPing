@@ -2,10 +2,9 @@
 # GitHub: https://github.com/s-r-e-e-r-a-j
 
 import socket
-from typing import Optional
 from .utils import now, is_ipv6
 
-def http_ping(host: str, timeout: float) -> Optional[float]:
+def http_ping(host: str, timeout: float) -> float | None:
     family: int = socket.AF_INET6 if is_ipv6(host) else socket.AF_INET
     sock: socket.socket = socket.socket(family, socket.SOCK_STREAM)
     sock.settimeout(timeout)

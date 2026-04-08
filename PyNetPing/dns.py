@@ -4,10 +4,9 @@
 import socket
 import struct
 import random
-from typing import Optional
 from .utils import now, is_ipv6
 
-def dns_ping(server: str, timeout: float) -> Optional[float]:
+def dns_ping(server: str, timeout: float) -> float | None:
     try:
         family: int = socket.AF_INET6 if is_ipv6(server) else socket.AF_INET
     except Exception:

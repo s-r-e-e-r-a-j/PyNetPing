@@ -2,7 +2,7 @@
 # GitHub: https://github.com/s-r-e-e-r-a-j
 
 import asyncio
-from typing import Iterable
+from collections.abc import Iterable
 from .ping import ping
 from .result import PingResult
 
